@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+    margin    : 0;
+    padding   : 0;
+}
+
+/* Containers */
+
+.container {
+    max-width: 60rem;
+    margin   : 0 auto;
+    padding  : .8 rem;
+}
+
+/* Header */
+
+.header {
+    background: #6F439C;
+    color     : white;
+    padding   : 1.6rem 0;
+}
+
+.header__title {
+    font-size    : 3.2rem;
+    margin-bottom: .4rem;
+}
+
+.header__subtitle {
+    /* color: #777; */
+    font-size  : 1.6rem;
+    font-weight: 300;
+}
+
+/* Actions Bar */
+
+.actions {
+    background-color: #353239;
+    padding         : .8rem;
+}
+
+.actions__container {
+    align-items: center;
+    display    : flex;
+    max-width  : 60rem;
+    margin     : 0 auto;
+}
+
+.input {
+    border      : none;
+    font-size   : 1.1rem;
+    font-weight : 300;
+    height      : 3rem;
+    width       : 20rem;
+    margin-right: auto;
+    padding     : .4rem .8rem;
+    resize      : both;
+    min-width   : 1rem;
+}
+
+.main-button {
+    border                   : 0 solid #e2e8f0;
+    border-radius            : 1.5rem;
+    color                    : #0d172a;
+    cursor                   : pointer;
+    min-width                : none;
+    margin                   : 0 1rem;
+    font-size                : 1.4rem;
+    font-weight              : 300;
+    line-height              : 1;
+    text-align               : center;
+    text-decoration          : none #0d172a solid;
+    text-decoration-thickness: auto;
+    transition               : all .1s cubic-bezier(.4, 0, .2, 1);
+    box-shadow               : 0px 1px 2px rgba(166, 175, 195, 0.25);
+    user-select              : none;
+    -webkit-user-select      : none;
+    touch-action             : manipulation;
+}
+
+.main-button:hover {
+    background-color: #1e293b;
+    color           : #fff;
+}
+
+@media (min-width: 1px) {
+    .main-button {
+        font-size: 1.125rem;
+        padding  : 1rem 2rem;
+    }
+}
+
+
+/* Movie list */
+.movie {
+    max-width: 60rem;
+    margin   : 0 auto;
+    clear    : both;
+    overflow : hidden;
+    padding  : .8rem 0;
+}
+
+.movie__text {}
+
+.movie__title {
+    padding: 0 0 .8rem .8rem;
+}
+
+.movie__subtitle {
+    padding: 0 0 .8rem .8rem;
+}
+
+.movie-image {
+    height      : 20rem;
+    float       : left;
+    display     : inline;
+    min-width   : none;
+    resize      : both;
+    margin-right: .8rem;
+}
+
+.movie-button {
+    background         : #5E5DF0;
+    border-radius      : 999px;
+    box-shadow         : #5E5DF0 0 10px 20px -10px;
+    box-sizing         : border-box;
+    color              : #FFFFFF;
+    cursor             : pointer;
+    font-family        : Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+    font-size          : 16px;
+    font-weight        : 700;
+    line-height        : 24px;
+    opacity            : 1;
+    outline            : 0 solid transparent;
+    padding            : 8px 18px;
+    user-select        : none;
+    -webkit-user-select: none;
+    touch-action       : manipulation;
+    width              : fit-content;
+    word-break         : break-word;
+    border             : 0;
+}
