@@ -1,3 +1,6 @@
+const resDiv = document.getElementById('results-div');
+
+//Generate DOM for one moview
 function generateMovieDom(movie) {
 
     const movieDiv = document.createElement('div');
@@ -17,6 +20,7 @@ function generateMovieDom(movie) {
     movieDescription.className = 'movie__subtitle';
     viewMoreBtn.textContent = ('Open film page');
     viewMoreBtn.className = 'movie-button';
+    viewMoreBtn.onclick = () => location.assign(`movie.html#${movie._id}`)
 
     movieDiv.appendChild(img);
     movieDiv.appendChild(movieTxtDiv);
@@ -27,4 +31,12 @@ function generateMovieDom(movie) {
     return movieDiv
 }
 
-export { generateMovieDom }
+//Generate DOM for each of the found or loaded movies
+function renderMovies(movies) {
+    movies.forEach(movie => {
+        const movieEl = generateMovieDom(movie);
+        resDiv.appendChild(movieEl);
+    });
+}
+
+export { renderMovies }

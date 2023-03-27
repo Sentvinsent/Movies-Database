@@ -2,6 +2,7 @@ const key = '5ea363cd1fe377e3ae1dcc973693a928';
 const baseUrl = 'https://api.themoviedb.org/3/';
 const baseImgUrl = 'https://image.tmdb.org/t/p/w500/';
 
+//Search movies
 async function search(page) {
 
     let word;
@@ -24,6 +25,7 @@ async function search(page) {
                 return movie.title && movie.poster_path && movie.overview
             }).map(movie => {
                 return {
+                    _id: movie.id,
                     title: movie.title,
                     img: baseImgUrl + movie.poster_path,
                     overview: movie.overview
@@ -35,6 +37,31 @@ async function search(page) {
     }
 }
 
+//Get details about a specific movie
+async function getMovieDetails(id) {
 
+    const URL = `${baseUrl}movie/${id}?api_key=${key}`;
 
-export { search }
+    try {
+        const response = await fetch(URL);
+        if (!response.ok) {
+            throw new Error('Failed to fetch movies data');
+        }
+        const res = await response.json();
+
+        return {
+            title: res.title,
+            overview: res.overview,
+            release_date: res.release_date,
+            budget: res.budget && res.budget != 0 ? res.budget : '',
+            img: baseImgUrl + res.poster_path,
+            rating: res.vote_average,
+            tmdbPage: `https://www.themoviedb.org/movie/${res.id}`
+        }
+    } catch (err) {
+        throw new Error('Failed to get movie details: ', err);
+    }
+
+}
+
+export { search, getMovieDetails }

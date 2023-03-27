@@ -1,32 +1,21 @@
-import { resetSearch } from "./functions";
-import { search } from "./requests";
-import { generateMovieDom } from "./views";
+// To do: 
+// •	Add error message when no results found.
+// •	Add back to top button
+// •	Add sorting
+// •	Adjust the html and css of the main page
 
-const resDiv = document.getElementById('results-div');
-let morePages = true;
-let currentPage = 1;
+import { loadMovies, searchMovies, resetSearch, loadMore } from "./functions";
 
-async function renderMovies() {
-    const data = await search(currentPage);
-    morePages = data.morePages;
-    if (currentPage === 1) {
-        resetSearch();
-    }
-    data.data.forEach(movie => {
-        const movieEl = generateMovieDom(movie);
-        resDiv.appendChild(movieEl);
-    });
-}
+//load movies if the user didn't reset the previous search
+loadMovies();
 
-document.getElementById('search-btn').addEventListener('click', renderMovies);
+document.getElementById('search-btn').addEventListener('click', searchMovies);
 document.getElementById('reset-btn').addEventListener('click', resetSearch);
 
-if (morePages) {
-    window.onscroll = () => {
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-            currentPage++;
-            renderMovies();
-        }
-    };
-}
+//handler scroll to the bottom of the page
+window.onscroll = () => {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        loadMore();
+    }
+};
 
