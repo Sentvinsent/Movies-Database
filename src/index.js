@@ -3,6 +3,7 @@
 // •	Add back to top button
 // •	Add sorting
 // •	Adjust the html and css of the main page
+// •	Add search by ‘Enter’ click
 
 import { loadMovies, searchMovies, resetSearch, loadMore } from "./functions";
 
