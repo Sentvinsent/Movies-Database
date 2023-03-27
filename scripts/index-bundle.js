@@ -104,13 +104,13 @@ function _searchMovies() {
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          _context.next = 2;
+          resetSearch();
+          _context.next = 3;
           return (0,_requests__WEBPACK_IMPORTED_MODULE_0__.search)(moviesData.currentPage);
-        case 2:
+        case 3:
           searchData = _context.sent;
           moviesData.movies = moviesData.movies.concat(searchData.data);
           moviesData.morePages = searchData.morePages;
-          resDiv.innerHTML = "";
           searchTxt.value = "";
           (0,_views__WEBPACK_IMPORTED_MODULE_1__.renderMovies)(moviesData.movies);
           saveMovies();
