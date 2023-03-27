@@ -10241,6 +10241,7 @@ __webpack_require__.r(__webpack_exports__);
 // •	Add back to top button
 // •	Add sorting
 // •	Adjust the html and css of the main page
+// •	Add search by ‘Enter’ click
 
 
 

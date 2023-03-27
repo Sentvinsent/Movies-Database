@@ -36,10 +36,10 @@ const loadMovies = () => {
 
 //get movies data and render the results
 async function searchMovies() {
+    resetSearch();
     const searchData = await search(moviesData.currentPage);
     moviesData.movies = moviesData.movies.concat(searchData.data);
     moviesData.morePages = searchData.morePages;
-    resDiv.innerHTML = "";
     searchTxt.value = "";
     renderMovies(moviesData.movies);
     saveMovies();
