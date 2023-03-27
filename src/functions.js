@@ -47,6 +47,7 @@ async function searchMovies() {
 
 //Reset search data
 function resetSearch() {
+    resDiv.innerHTML = "";
     moviesData = {
         movies: [],
         morePages: true,

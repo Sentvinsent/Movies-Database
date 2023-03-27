@@ -123,6 +123,7 @@ function _searchMovies() {
   return _searchMovies.apply(this, arguments);
 }
 function resetSearch() {
+  resDiv.innerHTML = "";
   moviesData = {
     movies: [],
     morePages: true,
