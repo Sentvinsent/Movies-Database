@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./styles/styles.css" rel="stylesheet">
+    <title>Movie page</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <h1 class="header__title">The Movies Database</h1>
+            <h2 class="header__subtitle">Browse through all existing movies in one click</h2>
+        </div>
+    </div>
+    <div class="body">
+        <div class="container movie-page">
+            <div class="movie-column movie-column__left">
+                <img id="movie-img">
+            </div>
+            <div class="movie-column movie-column__center">
+                <h2 id="movie-title">Unknown movie title</h2>
+                <p id="movie-overview">No description for this movie</p>
+            </div>
+            <div class="movie-column movie-column__right">
+                <p id="release-date">Release date: unknown</p>
+                <p id="budget"></p>
+                <div class="star-rating">
+                    <input type="radio" id="5-stars" name="rating" value="5" disabled="true" />
+                    <label for="5-stars" class="star">&#9733;</label>
+                    <input type="radio" id="4-stars" name="rating" value="4" disabled="true" />
+                    <label for="4-stars" class="star">&#9733;</label>
+                    <input type="radio" id="3-stars" name="rating" value="3" disabled="true" />
+                    <label for="3-stars" class="star">&#9733;</label>
+                    <input type="radio" id="2-stars" name="rating" value="2" disabled="true" />
+                    <label for="2-stars" class="star">&#9733;</label>
+                    <input type="radio" id="1-star" name="rating" value="1" disabled="true" />
+                    <label for="1-star" class="star">&#9733;</label>
+                </div>
+                    <button class="movie-button" id="tmdb-btn">Open in TMDB</button>
+            </div>
+        </div>
+    </div>
+    <script src="./scripts/movie-bundle.js"></script>
+</body>
+
+</html>
