@@ -1,4 +1,5 @@
 const resDiv = document.getElementById('results-div');
+const errorDiv = document.getElementById('error-div');
 
 //Generate DOM for one moview
 function generateMovieDom(movie) {
@@ -39,4 +40,15 @@ function renderMovies(movies) {
     });
 }
 
-export { renderMovies }
+//Display error message
+function noResError(message) {
+    const errorEl = document.createElement('p');
+    errorEl.className = 'no-res-error';
+    errorEl.textContent = message;
+    errorDiv.appendChild(errorEl);
+    setTimeout(() => {
+        errorDiv.innerHTML = "";
+    }, 2500)
+
+}
+export { renderMovies, noResError }

@@ -1,5 +1,5 @@
 import { search } from "./requests";
-import { renderMovies } from "./views";
+import { noResError, renderMovies } from "./views";
 
 const resDiv = document.getElementById('results-div');
 const searchTxt = document.getElementById('search-input');
@@ -37,12 +37,17 @@ const loadMovies = () => {
 //get movies data and render the results
 async function searchMovies() {
     resetSearch();
-    const searchData = await search(moviesData.currentPage);
-    moviesData.movies = moviesData.movies.concat(searchData.data);
-    moviesData.morePages = searchData.morePages;
-    searchTxt.value = "";
-    renderMovies(moviesData.movies);
-    saveMovies();
+    try {
+        const searchData = await search(moviesData.currentPage);
+        moviesData.movies = moviesData.movies.concat(searchData.data);
+        moviesData.morePages = searchData.morePages;
+        searchTxt.value = "";
+        renderMovies(moviesData.movies);
+        saveMovies();
+    }
+    catch (e) {
+        noResError(e.message);
+    }
 }
 
 //Reset search data

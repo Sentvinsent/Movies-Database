@@ -217,3 +217,9 @@ body {
 .star-rating :checked~label {
     color: #f90;
 }
+
+#error-div {
+    color      : #D8000C;
+    font-size  : 1.6rem;
+    font-weight: 300;
+}
