@@ -10,26 +10,27 @@
 </head>
 
 <body>
-    <div>
-        <div class="header">
-            <div class="container">
-                <h1 class="header__title">The Movies Database</h1>
-                <h2 class="header__subtitle">Browse through all existing movies in one click</h2>
+    <div class="header">
+        <div class="container">
+            <h1 class="header__title">The Movies Database</h1>
+            <h2 class="header__subtitle">Browse through all existing movies in one click</h2>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="actions__container">
+            <input type="text" placeholder="Enter movie title..." class="input" id="search-input">
+            <button class="main-button" id="search-btn">Search</button>
+            <button class="main-button" id="reset-btn">Reset</button>
+        </div>
+    </div>
+    <div class="body">
+        <div class="container">
+            <div id="error-div">
+            </div>
+            <div id="results-div">
             </div>
         </div>
-        <div class="actions">
-            <div class="actions__container">
-                <input type="text" placeholder="Enter movie title..." class="input" id="search-input">
-                <button class="main-button" id="search-btn">Search</button>
-                <button class="main-button" id="reset-btn">Reset</button>
-            </div>
-        </div>
-        <div class="body">
-            <div class="container">
-                <div id="results-div">
-                </div>
-            </div>
-        </div>
+        <button class="toTop" id="top-btn">Top</button>
     </div>
     <script src="scripts/index-bundle.js"></script>
 </body>
