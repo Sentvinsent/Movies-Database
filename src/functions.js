@@ -3,6 +3,7 @@ import { noResError, renderMovies } from "./views";
 
 const resDiv = document.getElementById('results-div');
 const searchTxt = document.getElementById('search-input');
+const topBtn = document.getElementById('top-btn');
 
 //save loaded movies into the storage
 const saveMovies = () => {
@@ -36,7 +37,6 @@ const loadMovies = () => {
 
 //get movies data and render the results
 async function searchMovies() {
-    resetSearch();
     try {
         const searchData = await search(moviesData.currentPage);
         moviesData.movies = moviesData.movies.concat(searchData.data);
@@ -69,4 +69,21 @@ function loadMore() {
     }
 }
 
-export { resetSearch, loadMovies, searchMovies, loadMore }
+//Handle scroll
+function handleScroll() {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        loadMore();
+    } if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        topBtn.style.display = "block";
+    } else {
+        topBtn.style.display = "none";
+    }
+}
+
+//Scroll to top
+function scrollToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+export { resetSearch, loadMovies, searchMovies, loadMore, handleScroll, scrollToTop }
